@@ -50,24 +50,16 @@
 } /*배경이미지 bullet_orange.gif
 반복 no 위치right center 글자색 color#F90 */
 article {
-	float: right;
-	width: 660px;
+	margin : 60px 0 0 195px;
+	width: 100vh;
+	height : 100vh;
 	padding-right: 30px;
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 1em;
 	line-height: 1.5em
 }
-/*정렬 오른쪽 너비 660px 안오른쪽여백 30px
-글자체Verdana,Geneva,sans-serif 글자크기1em 
-줄간격1.5em */
-article h1 {
-	font-family: "Times New Roman";
-	font-size: 45px;
-	color: #CCC;
-	margin: 20px 0;
-	font-weight: normal;
-} /*글자체 Times New Roman 글자크기 45px
-글자색 #CCC 밖여백20px 0  글자굵기 normal*/
+
+
 article p {
 	padding-left: 10px
 } /*안왼쪽여백 10px*/
@@ -94,9 +86,21 @@ figcaption {
 /*너비 971 높이179 
 배경이미지 images/center/sub_back.png
 반복 no 위치left top */
-article table#notice {
-	width: 670px;
+
+article table#notice, article table#notice1, article table#upForm, article table#delForm, article table#writeForm  {
+	width: 1120px;
 	border-collapse: collapse;
+}
+article table#notice1 tr, article table#upForm tr, article table#delForm, article table#writeForm tr{
+	text-align: center;
+	border-bottom : 0.5px solid black;
+	font-family: 'Zen Antique', serif;
+	height:30px;
+	
+}
+article table#delForm{
+	border:none;
+	margin-top: 100px;
 }
 /*너비 670 테이블공간없애기*/
 @font-face {
@@ -110,25 +114,35 @@ article table#notice th {
 	height: 20px;
 	text-transform: capitalize;
 	font-size: 14px;
-	font-family: seo;
-	font-weight: bold;
 	padding: 5px;
-	background-image: url("../images/center/t_back.jpg");
 	background-repeat: repeat-x;
 	background-position: center center;
-	color: #FFF
+	color:black;
+	font-family: 'Zen Antique', serif;
 }
 /*높이 20 첫글자대문자
 글자크기 14 글자모양 seo 굵기 bold 안여백 5px
 배경이미지 images/center/t_back.jpg 반복 x 
 위치 center center 글자색 #FFF*/
-article table#notice td {
+article table#notice td, article table#upForm td, articel table#delForm td, article table#writeForm td{
 	text-align: center;
 	padding: 6px 0;
-	border-bottom-width: 1px;
-	border-bottom-style: dotted;
-	border-bottom-color: #999
+	font-family: 'Zen Antique', serif;
 }
+article table#upForm input, article table#upForm textarea, article table#delForm input{
+	width:685px;
+	font-family: 'Zen Antique', serif;
+	border: none;
+	
+}
+
+article table#writeForm input{
+	width:685px;
+	font-family: 'Zen Antique', serif;
+	border: 0.5px solid black;
+}
+
+
 /*글자정렬 center
 안여백 6px 0 테두리아래너비 1px 테두리아래스타일dotted
 테두리아래색 #999*/
@@ -138,8 +152,7 @@ article table#notice td.left {
 /*글자정렬 left*/
 article th.tno {
 	width: 50px;
-	border-top-left-radius: 5px;
-	border-bottom-left-radius: 5px;
+	
 } /*너비 50px 
 왼쪽위 둥글게5px 왼쪽아래 둥글게5px*/
 article th.ttitle {
@@ -170,23 +183,29 @@ article #table_search {
 #table_search .input_box {
 	height: 20px;
 	width: 200px;
-	border-radius: 10px;
-	background-color: #FEFDED;
+	background-color: white;
 	border: 1px solid #333
 }
 /*높이 20px 너비 200px
 테두리 1px solid #333 테두리둥글게 10px 배경색#FEFDED*/
-#table_search .btn {
-	padding: 2px;
-	margin: 0 0 0 5px;
-	width: 90px;
+#table_search .btn, table#upForm .btn, table#delForm .btn, table#writeForm .btn{
+	width: 120px;
 	height: 23px;
-	border: 1px solid #999;
-	border-radius: 10px;
+	border: none;
+	margin: 0 0 0 5px;
 	color: #FFF;
-	background-image: url("../images/center/t_back.jpg");
+	background-color: #424242; 
+	background-repeat : repeat-x;
+	background-position: center center;
 	background-repeat: repeat-x;
-	background-position: center center
+	font-family: 'Zen Antique', serif;
+	cursor: pointer;
+}
+
+table#delForm .btn{
+	position:absolute;
+	left:460px;
+	top:230px;
 }
 /*안여백 2px 밖여백 0 0 0 5px
 너비 90 높이 23 테두리 1 solid #999 테두리둥글게 10px
@@ -214,7 +233,7 @@ article #table_search {
 }
 /*글자굵기bold 글자색#F90 밑줄 underline*/
 article table#notice tr:hover {
-	background-color: #EEFDFF;
+	background-color: #f5f5f5;
 	cursor: pointer;
 	cursor: hand;
 }
@@ -230,84 +249,130 @@ article table#notice tr:hover {
 }
 
 form#join {
-	margin: 10px 0 0 0;
-	width: 670px
+	margin: 0 80px;
+	width: 400px;
+	height : 500px;
+	position : relative;
+	top : 80px;
+	left : 500px;
 }
 /*밖여백 10px 0 0 0 너비670px*/
 form#join fieldset {
-	padding: 10px 0 20px 5px;
+	margin : 0;
+	padding: 0;
 	border: none;
 }
 /*안여백 10px 0 20px 5px 테두리없음*/
-form#join fieldset legend {
-	font-family: seo;
-	font-size: 20px;
-	border-bottom: 1px dotted #666;
-	width: 600px;
-	padding: 5px 0;
-}
-/*글자체 seo 글자크기20px
-테두리아래 1px dotted #666 너비600px 안여백 5px 0*/
 form#join label {
 	width: 140px;
 	float: left;
-	margin: 5px 0
+	margin: 0
 }
+
+
 /*너비 140px 정렬 왼쪽 밖여백 5px 0*/
 form#join input {
 	margin: 5px 0;
-	border: 1px solid #999;
-	background-color: #FCFDEA
+	border: 1px solid #424242;
+	background-color: white;
+	width: 400px;
+	height: 18px;
 }
 /*밖여백 5px 0 테두리 1px solid #999
 배경색 #FCFDEA*/
 form#join input.id {
-	width: 100px;
+	width: 270px;
 	height: 18px;
-} /*너비 100px 높이 18px*/
+}
+
 form#join input.dup {
 	width: 120px;
 	height: 23px;
-	border-radius: 8px;
 	border: none;
 	margin: 0 0 0 5px;
-	font-weight: bold;
 	color: #FFF;
-	background-image: url("../images/member/dup.jpg");
-	background-repeat: repeat-x;
+	background-color: #424242; 
+	background-repeat : repeat-x;
 	background-position: center center;
+	background-repeat: repeat-x;
+	font-family: 'Zen Antique', serif;
+	cursor: pointer;
 }
 /*너비 120px 높이23px 
 테두리둥글게 8px 테두리none 밖여백 0 0 0 5px
 글자굵기bold 글자색 #FFF 
 배경이미지 images/member/dup.jpg
 repeat-x center center*/
-form#join #buttons .submit, form#join #buttons .cancel {
-	height: 30px;
-	width: 150px;
-	border: 1px solid #666;
-	border-radius: 10px;
-	box-shadow: 3px 3px 2px #CCC;
+form#join .submit{
+	margin-top : 10px;
+	height: 25px;
+	width: 405px;
+	border: none;
 	font-size: 14px;
+	color: #FFF;
+	font-family: 'Zen Antique', serif;
+	background-color: #424242; 
+	background-repeat: repeat-x;
+	background-position: center center;
+	cursor: pointer;
+}
+#buttons{
+	width:405px;
+	display : flex;
+	flex-direction: row;
+	justify-content: space-between; 
+}
+
+#buttons .submit1, #buttons .join{
+	margin-top : 10px;
+	height: 25px;
+	width: 197px;
+	border: none;
+	font-size: 14px;
+	color: #FFF;
+	font-family: 'Zen Antique', serif;
+	background-color: #424242; 
+	background-repeat: repeat-x;
+	background-position: center center;
+	cursor: pointer;
 }
 /*높이 30px 너비150px 테두리 1px solid #666
 테두리둥글게 10px 박스그림자 3px 3px 2px #CCC
 글자크기 14px*/
-form#join #buttons .submit {
-	background-image: url("../images/member/submit_back.jpg");
-	background-repeat: repeat-x;
-	background-position: center center;
-	color: #fff;
-} /*
-배경이미지 images/member/submit_back.jpg
-repeat-x center center 글자색 #fff*/
-form#join #buttons .cancel {
-	margin: 0 0 0 20px;
-	background-image: url("../images/member/cancel_back.jpg");
-	background-repeat: repeat-x;
-	background-position: center center;
-	color: #fff;
+
+h2{
+	font-family: 'Zen Antique', serif;
+	font-size : 30px;
 }
+
+fieldset#IdCheck{
+	margin-top : 30px;
+	padding: 0;
+	border: none;
+}
+input#idUse, input#checkButton {
+	width: 100px;
+	height: 23px;
+	border: none;
+	margin: 0 0 0 5px;
+	color: #FFF;
+	background-color: #424242; 
+	background-repeat : repeat-x;
+	background-position: center center;
+	background-repeat: repeat-x;
+	font-family: 'Zen Antique', serif;
+	cursor: pointer;
+	position : relative;
+	left : 50px;
+}
+input#idUse{
+	position : relative;
+	left : 90px;
+}
+label#useLabel, label#idLabel{
+	font-family: 'Zen Antique', serif;
+}
+
 /*밖여백 0 0 0 20px
 배경이미지 images/member/cancel_back.jpg
 repeat-x center center*/
