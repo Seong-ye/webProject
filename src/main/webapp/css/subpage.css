@@ -1,0 +1,410 @@
+@CHARSET "UTF-8";
+
+nav#sub_menu{
+	width: 238px;
+	height : 155px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 1em;
+	position:fixed;
+	top: 190px;
+	left : 5px;
+}
+div#sub_menu2{
+	width: 260px;
+	height : 155px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 1em;
+	padding-right:30px;
+	position:fixed;
+	top: 190px;
+	right : 0;
+	
+}
+select#select{
+	width:238px;
+	
+}
+div#detailPage{
+	margin:80px 0;
+	text-align: center;
+}
+div#detailPage div.label{
+	background-color: white;
+	margin:100px 0;
+	width:500px;
+	height:100px;
+	position:relative;
+	left : 545px;
+	top: 30px;
+	
+}
+div#detailPage label.label1{
+	font-family: 'Zen Antique', serif;
+	font-size: 5em;
+	
+
+}
+div#detailPage label.label2{
+	font-family: 'Zen Antique', serif;
+	font-size: 2em;
+
+}
+
+
+/*너비 238px 정렬 왼쪽 밖여백20px
+글자체 Verdana,Geneva,sans-serif 글자크기 1em*/
+#sub_menu ul, #sub_menu2 ul {
+	padding: 0;
+	margin: 20px 0;
+	list-style: none;
+} /*밖여백 20 0 0 10 리스트스타일none*/
+#sub_menu a {
+	text-decoration: none;
+	color: #666;
+	display: block;
+	height: 15px;
+	width: 150px;
+	padding: 7px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #999;
+	background-image: url("../images/bullet.gif");
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+
+#sub_menu a:hover {
+	color: #F90;
+	background-image: url("../images/bullet_orange.gif");
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+
+article {
+	margin : 60px 0 0 195px;
+	width: 100vh;
+	height : 100vh;
+	padding-right: 30px;
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 1em;
+	line-height: 1.5em
+}
+
+
+article p {
+	padding-left: 10px
+} /*안왼쪽여백 10px*/
+figure.ceo {
+	float: right;
+	margin: 5px;
+} /*정렬 오른쪽 밖여백 5px*/
+figcaption {
+	text-align: center;
+	color: #39F
+}
+/*글자정렬 가운데 글자색 #39F*/
+.clear {
+	clear: both;
+}
+
+article table#notice, article table#notice1, article table#upForm, article table#delForm, article table#writeForm  {
+	width: 1120px;
+	border-collapse: collapse;
+}
+article table#notice1 tr, article table#upForm tr, article table#delForm, article table#writeForm tr{
+	text-align: center;
+	border-bottom : 0.5px solid black;
+	font-family: 'Zen Antique', serif;
+	height:30px;
+	
+}
+article table#delForm{
+	border:none;
+	margin-top: 100px;
+}
+/*너비 670 테이블공간없애기*/
+@font-face {
+	font-family: "seo";
+	src: url("../images/segoeui.eot");
+	src: local(""), url("../images/segoeui.woff") format("woff"),
+		url("../images/segoeui.ttf") format("truetype");
+}
+
+article table#notice th {
+	height: 20px;
+	text-transform: capitalize;
+	font-size: 14px;
+	padding: 5px;
+	background-repeat: repeat-x;
+	background-position: center center;
+	color:black;
+	font-family: 'Zen Antique', serif;
+}
+/*높이 20 첫글자대문자
+글자크기 14 글자모양 seo 굵기 bold 안여백 5px
+배경이미지 images/center/t_back.jpg 반복 x 
+위치 center center 글자색 #FFF*/
+article table#notice td, article table#upForm td, articel table#delForm td, article table#writeForm td{
+	text-align: center;
+	padding: 6px 0;
+	font-family: 'Zen Antique', serif;
+}
+article table#upForm input, article table#upForm textarea, article table#delForm input{
+	width:685px;
+	font-family: 'Zen Antique', serif;
+	border: none;
+	
+}
+
+article table#writeForm input{
+	width:685px;
+	font-family: 'Zen Antique', serif;
+	border: 0.5px solid black;
+}
+
+
+/*글자정렬 center
+안여백 6px 0 테두리아래너비 1px 테두리아래스타일dotted
+테두리아래색 #999*/
+article table#notice td.left {
+	text-align: left;
+}
+/*글자정렬 left*/
+article th.tno {
+	width: 50px;
+	
+} /*너비 50px 
+왼쪽위 둥글게5px 왼쪽아래 둥글게5px*/
+article th.ttitle {
+	width: 400px;
+	letter-spacing: 0.7em
+}
+/*너비 400px 문자간격 0.7em*/
+article th.twrite {
+	width: 100px;
+}
+/*너비 100px*/
+article th.tdate {
+	width: 50px;
+}
+/*너비 50px*/
+article th.tread {
+	width: 50px;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+/*너비 50px 
+오른쪽위 둥글게5px 오른쪽아래 둥글게5px*/
+article #table_search {
+	margin: 15px 0 10px 0;
+	float: right;
+}
+/*밖여백 15px 0 10px 0 정렬 right*/
+#table_search .input_box {
+	height: 20px;
+	width: 200px;
+	background-color: white;
+	border: 1px solid #333
+}
+/*높이 20px 너비 200px
+테두리 1px solid #333 테두리둥글게 10px 배경색#FEFDED*/
+#table_search .btn, table#upForm .btn, table#delForm .btn, table#writeForm .btn{
+	width: 120px;
+	height: 23px;
+	border: none;
+	margin: 0 0 0 5px;
+	color: #FFF;
+	background-color: #424242; 
+	background-repeat : repeat-x;
+	background-position: center center;
+	background-repeat: repeat-x;
+	font-family: 'Zen Antique', serif;
+	cursor: pointer;
+}
+
+table#delForm .btn{
+	position:absolute;
+	left:460px;
+	top:230px;
+}
+/*안여백 2px 밖여백 0 0 0 5px
+너비 90 높이 23 테두리 1 solid #999 테두리둥글게 10px
+글자색 #FFF 
+배경이미지 t_back.jpg repeat-x center center*/
+#page_control {
+	text-align: center;
+	margin: 20px 0 0 0;
+	margin-right: auto;
+	margin-left: auto;
+}
+/*글자정렬 center 밖여백 20px 0 0 0
+밖여백오른쪽 auto 밖여백왼쪽 auto*/
+#page_control a {
+	padding: 2px 5px;
+	text-decoration: none;
+	color: #333;
+	margin: 0 5px;
+}
+/*안여백 2px 5px 밑줄 none 글자색#333 밖여백 0 5px*/
+#page_control a:hover {
+	font-weight: bold;
+	color: #F90;
+	text-decoration: underline;
+}
+/*글자굵기bold 글자색#F90 밑줄 underline*/
+article table#notice tr:hover {
+	background-color: #f5f5f5;
+	cursor: pointer;
+	cursor: hand;
+}
+/*배경색 #EEFDFF
+커서 pointer 커서 hand*/
+/*------------------*/
+#sub_img_member {
+	width: 971px;
+	height: 179px;
+	background-image: url("../images/member/sub_back.png");
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+form#join {
+	margin: 0 80px;
+	width: 400px;
+	height : 900px;
+	position : relative;
+	top : 140px;
+	left : 500px;
+}
+/*밖여백 10px 0 0 0 너비670px*/
+form#join fieldset {
+	margin : 0;
+	padding: 0;
+	border: none;
+}
+/*안여백 10px 0 20px 5px 테두리없음*/
+form#join label {
+	width: 140px;
+	float: left;
+	margin: 0
+}
+
+
+/*너비 140px 정렬 왼쪽 밖여백 5px 0*/
+form#join input {
+	margin: 5px 0;
+	border: 1px solid #424242;
+	background-color: white;
+	width: 400px;
+	height: 18px;
+}
+form#join input#sample4_detailAddress, form#join input#sample4_extraAddress{
+	width : 194px;
+}
+/*밖여백 5px 0 테두리 1px solid #999
+배경색 #FCFDEA*/
+form#join input.id {
+	width: 270px;
+	height: 18px;
+}
+
+form#join input.dup, form#join input.addressBtn {
+	width: 120px;
+	height: 23px;
+	border: none;
+	margin: 0 0 0 5px;
+	color: #FFF;
+	background-color: #424242; 
+	background-repeat : repeat-x;
+	background-position: center center;
+	background-repeat: repeat-x;
+	font-family: 'Zen Antique', serif;
+	cursor: pointer;
+}
+form#join input.addressBtn{
+	margin: 5px 0;
+}
+/*너비 120px 높이23px 
+테두리둥글게 8px 테두리none 밖여백 0 0 0 5px
+글자굵기bold 글자색 #FFF 
+배경이미지 images/member/dup.jpg
+repeat-x center center*/
+form#join .submit{
+	margin-top : 10px;
+	height: 25px;
+	width: 405px;
+	border: none;
+	font-size: 14px;
+	color: #FFF;
+	font-family: 'Zen Antique', serif;
+	background-color: #424242; 
+	background-repeat: repeat-x;
+	background-position: center center;
+	cursor: pointer;
+}
+#buttons{
+	width:405px;
+	display : flex;
+	flex-direction: row;
+	justify-content: space-between; 
+}
+
+#buttons .submit1, #buttons .join{
+	margin-top : 10px;
+	height: 25px;
+	width: 197px;
+	border: none;
+	font-size: 14px;
+	color: #FFF;
+	font-family: 'Zen Antique', serif;
+	background-color: #424242; 
+	background-repeat: repeat-x;
+	background-position: center center;
+	cursor: pointer;
+}
+/*높이 30px 너비150px 테두리 1px solid #666
+테두리둥글게 10px 박스그림자 3px 3px 2px #CCC
+글자크기 14px*/
+
+h2{
+	font-family: 'Zen Antique', serif;
+	font-size : 30px;
+}
+
+fieldset#IdCheck{
+	margin-top : 30px;
+	padding: 0;
+	border: none;
+}
+input#idUse, input#checkButton {
+	width: 100px;
+	height: 23px;
+	border: none;
+	margin: 0 0 0 5px;
+	color: #FFF;
+	background-color: #424242; 
+	background-repeat : repeat-x;
+	background-position: center center;
+	background-repeat: repeat-x;
+	font-family: 'Zen Antique', serif;
+	cursor: pointer;
+	position : relative;
+	left : 50px;
+}
+input#idUse{
+	position : relative;
+	left : 90px;
+}
+label#useLabel, label#idLabel{
+	font-family: 'Zen Antique', serif;
+}
+article#shopArticle{
+	width: 1263px;
+	height : 3500px; 
+}
+
+table#shopping img{
+	width : 345px;
+	height : 470px;
+	margin : 95px;
+}
