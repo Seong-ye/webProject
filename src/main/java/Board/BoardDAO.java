@@ -288,7 +288,96 @@ public class BoardDAO {
 		}
 		return count;
 	}
-	
-	
+	//List boardList  =  getBoardList(startRow, pageSize) 메서드 정의
+		public List<BoardDTO> getBoardList(int startRow,int pageSize,String search) {
+			// 게시판 글을 여러개 저장할수 있는 배열(모든형 Object 저장)
+//			List boardList=new ArrayList();
+			//BoardDTO형만 저장할수 있게 객체생성 => 제네릭타입
+			List<BoardDTO> boardList=new ArrayList<BoardDTO>();
+			try {
+				//1,2 단계 디비연결 메서드 호출
+				con=getConnection();
+				// 3단계 sql  
+				// 최근글 위로 정렬 select * from board order by num desc;
+//				sql="select * from board order by num desc";
+				// select * from board order by num desc limit 시작행-1, 가져올개수
+//				sql="select * from board order by num desc limit ?, ?";
+				sql="select * from board where subject like ? order by num desc limit ?, ?";
+				pstmt=con.prepareStatement(sql);
+				pstmt.setString(1,"%"+search+"%");
+				pstmt.setInt(2, startRow-1);
+				pstmt.setInt(3, pageSize);
+				
+				// 4단계 실행 => 결과저장 
+				rs=pstmt.executeQuery();
+	// 5 결과 => 글하나 BoardDTO 에 저장 => boardList한칸에 글하나 저장 
+				// 5단계 결과 while 출력 
+				while(rs.next()){
+					// 행 게시판글 하나를 BoardDTO에 저장
+					BoardDTO boardDTO=new BoardDTO();
+					// 디비에서 열 => 멤버변수에 저장
+					boardDTO.setNum(rs.getInt("num"));
+					boardDTO.setName(rs.getString("name"));
+					boardDTO.setPass(rs.getString("pass"));
+					boardDTO.setSubject(rs.getString("subject"));
+					boardDTO.setContent(rs.getString("content"));
+					boardDTO.setReadcount(rs.getInt("readcount"));
+					boardDTO.setDate(rs.getTimestamp("date"));
+					// 글하나를 배열 한칸에 저장 
+					boardList.add(boardDTO);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				obclose();
+			}
+			return boardList;
+		}//getBoardList()
+//		int count=boardDAO.getBoardCount(search);
+		public int getBoardCount(String search) {
+			int count=0;
+			try {
+				//1,2 단계 디비연결 메서드 호출
+				con=getConnection();
+				// 3단계 sql select count(*) from board;
+//				sql="select count(*) from board where subject like '%검색어%'";
+				sql="select count(*) from board where subject like ?";
+				pstmt=con.prepareStatement(sql);
+				pstmt.setString(1,"%"+search+"%");
+				// 4단계 실행 => 결과저장 
+				rs=pstmt.executeQuery();
+				// 5단계 결과 if 출력 
+				if(rs.next()) {
+					count=rs.getInt("count(*)");
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				obclose();
+			}
+			return count;
+		}
+		//리턴값없음 updateBoard(boardDTO)
+		public void fupdateBoard(BoardDTO boardDTO) {
+			try {
+				//1,2 단계 디비연결 메서드 호출
+				con=getConnection();
+				//3단계 update  name subject content 수정
+			sql="update board set name=?, subject=?, content=?, file=? where num=?";
+				pstmt=con.prepareStatement(sql);
+				pstmt.setString(1,boardDTO.getName());
+				pstmt.setString(2,boardDTO.getSubject());
+				pstmt.setString(3,boardDTO.getContent());
+				//file 추가
+				pstmt.setString(4,boardDTO.getFile());
+				pstmt.setInt(5, boardDTO.getNum());
+				//4단계 실행
+				pstmt.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}finally {
+				obclose();
+			}
+		}//fupdateBoard(boardDTO)
 	
 }//클래스

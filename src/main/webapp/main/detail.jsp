@@ -19,9 +19,9 @@
 		<!-- 왼쪽메뉴 -->
 		<nav id="sub_menu">
 			<ul>
-				<li><a href="#">withourcoat</a></li>
-				<li><a href="#">market</a></li>
-				<li><a href="#">sale</a></li>
+				<li><a href="../main/main.jsp">withourcoat</a></li>
+				<li><a href="../main/shopping.jsp">market</a></li>
+				<li><a href="../main/shopping.jsp">sale</a></li>
 			</ul>
 		</nav>
 		<!-- 왼쪽메뉴 -->

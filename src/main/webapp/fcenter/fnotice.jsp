@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>fcenter/fnotice.jsp</title>
 <link href="../css/default.css" rel="stylesheet" type="text/css">
 <link href="../css/subpage.css" rel="stylesheet" type="text/css">
 
@@ -69,7 +69,7 @@
 				for (int i = 0; i < boardList.size(); i++) {
 					BoardDTO boardDTO = boardList.get(i);
 				%>
-				<tr onclick="location.href='content.jsp?num=<%=boardDTO.getNum()%>'">
+				<tr onclick="location.href='fcontent.jsp?num=<%=boardDTO.getNum()%>'">
 					<td><%=boardDTO.getNum()%></td>
 					<td class="left"><%=boardDTO.getSubject()%></td>
 					<td><%=boardDTO.getName()%></td>
@@ -79,25 +79,24 @@
 				<%
 				}
 				%>
-			<tr><td colspan="5">
+			<tr><td colspan = "5">
 			<div id="table_search">
-			<form action = "noticeSearch.jsp" method="get">
+			<form action = "fnoticeSearch.jsp" method="get">
 				<input type="text" name="search" class="input_box" > 
-				<input type="submit" value="search" class="btn">
+				<input type="button" value="search" class="btn">
 			
 			<%
 			//로그인(세션값 있음) => 글쓰기 버튼 보임
 			String id = (String)session.getAttribute("id");
 			if(id!=null){
 				%>
-				<input type="button" value="Write" class="btn" onclick="location.href='writeForm.jsp'">
+				<input type="button" value="Write" class="btn" onclick="location.href='fwriteForm.jsp'">
 				<%
 			}
 			%>
 			</form>
 			</div>
-			</td>
-			</tr>
+			</td></tr>
 			<tr><td colspan="5">
 			<div id="page_control">
 				<%
@@ -119,17 +118,17 @@
 				<%
 				if (startPage > pageBlock) {
 				%>
-				<a href="notice.jsp?pageNum=<%=startPage - pageBlock%>">Prev</a>
+				<a href="fnotice.jsp?pageNum=<%=startPage - pageBlock%>">Prev</a>
 				<%
 				}
 				for (int i = startPage; i <= endPage; i++) {
 				%>
-				<a href="notice.jsp?pageNum=<%=i%>"><%=i%></a>
+				<a href="fnotice.jsp?pageNum=<%=i%>"><%=i%></a>
 				<%
 				}
 				if (endPage < pageCount) {
 				%>
-				<a href="notice.jsp?pageNum=<%=startPage + pageBlock%>">Next</a>
+				<a href="fnotice.jsp?pageNum=<%=startPage + pageBlock%>">Next</a>
 				<%
 				}
 				%>

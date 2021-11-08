@@ -140,20 +140,20 @@
 				onsubmit="return check()">
 				<fieldset>
 					<label>아이디</label> <br>
-					<input type="text" name="id" class="id"> <input
-						type="button" value="Check Id" class="dup" onclick="winopen()"><br>
+					<input type="text" name="id" class="id"> 
+					<input type="button" value="Check Id" class="dup" onclick="winopen()"><br>
 					<label>비밀번호</label><br> <input type="password" name="pass"><br>
 					<label>비밀번호 확인</label><br> <input type="password" name="pass2"><br>
 					<label>이름</label><br> <input type="text" name="name"><br>
 					<label>휴대 전화</label><br> <input type="tel" name="phone"><br>
 					<label>주소</label>
-					<input type="text" id="sample4_postcode" placeholder="우편번호">
+					<input type="text" id="sample4_postcode" placeholder="우편번호" >
 					<input type="button" onclick="sample4_execDaumPostcode()" class ="addressBtn" value="우편번호 찾기"><br>
-					<input type="text" id="sample4_roadAddress" placeholder="도로명주소">
+					<input type="text" id="sample4_roadAddress" placeholder="도로명주소" name="address">
 					<input type="text" id="sample4_jibunAddress" placeholder="지번주소">
 					<span id="guide" style="color:#999;display:none"></span>
-					<input type="text" id="sample4_detailAddress" placeholder="상세주소">
-					<input type="text" id="sample4_extraAddress" placeholder="참고항목">
+					<input type="text" id="sample4_detailAddress" placeholder="상세주소" >
+					<input type="text" id="sample4_extraAddress" placeholder="참고항목" >
 					<label>이메일</label><br> <input type="email" name="email"><br>
 				</fieldset>
 				<input type="submit" value="Join" class="submit">

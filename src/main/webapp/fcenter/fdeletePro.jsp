@@ -14,16 +14,19 @@
 </head>
 <body>
 	<%
-	//request 태그파라미터 가져오기 num 
+	//request num  pass  파라미터 가져오기
 	int num = Integer.parseInt(request.getParameter("num"));
+	String pass = request.getParameter("pass");
 
-	// BoardDAO 객체생성 
+	//디비 객체생성
 	BoardDAO boardDAO = new BoardDAO();
-	//  deleteBoard(num) 메서드 호출
-	boardDAO.deleteBoard(num);
+	//메서드 호출 BoardDTO boardDTO2= numCheck(num,pass)
+	BoardDTO boardDTO2 = boardDAO.numCheck(num, pass);
 
-	// notice.jsp 이동 
-	response.sendRedirect("notice.jsp");
+	//null 아닌경우 => num,pass일치 => deleteBoard(num)=>list.jsp이동
+	boardDAO.deleteBoard(num);
+	//list.jsp 이동
+	response.sendRedirect("../fcenter/fnotice.jsp");
 	%>
 </body>
 </html>

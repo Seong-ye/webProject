@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>content.jsp</title>
+<title>fcenter/fwriteForm.jsp</title>
 <link href="../css/default.css" rel="stylesheet" type="text/css">
 <link href="../css/subpage.css" rel="stylesheet" type="text/css">
 
@@ -18,38 +18,49 @@
 		<!-- 헤더들어가는 곳 -->
 		<jsp:include page="../inc/top.jsp"></jsp:include>
 		<!-- 헤더들어가는 곳 -->
-
+		<!-- 게시판 -->
 		<%
 		String id = (String) session.getAttribute("id");
 		//세션값이 없으면 login.jsp 이동
 		if (id == null) {
-			response.sendRedirect("../member/login.jsp");
+			response.sendRedirect("login.jsp");
 		}
-
-		//http://localhost:8181/JspStudy/jsp5/deleteForm.jsp?num=2
-		//request내장객체에서 num 가져오기
-		int num = Integer.parseInt(request.getParameter("num"));
 		%>
 		<article>
-			<form action="deletePro.jsp" method="post">
-				<input type="hidden" name="num" value="<%=num%>">
-				<input type="hidden" name="pass" value="1234"> 
-				<table id="delForm">
+			<form action="fwritePro.jsp" method="post"
+				enctype="multipart/form-data">
+				<input type="hidden" name="pass" value="1234">
+				<table id="writeForm">
 					<tr>
 						<td>작성자</td>
 						<td><input type="text" name="name" value="<%=id%>" readonly></td>
 					</tr>
 					<tr>
+						<td>제목</td>
+						<td><input type="text" name="subject"></td>
+					</tr>
+					<tr>
+						<td>첨부파일</td>
+						<td><input type="file" name="file"></td>
+					</tr>
+					<tr>
+						<td>내용</td>
+						<td><textarea name="content" rows="10" cols="100"></textarea></td>
+					</tr>
+					<tr>
 						<td colspan="2">
 							<div id="table_search">
-								<input type="submit" value="글삭제" class="btn">
+								<input type="submit" value="글쓰기" class="btn"> <input
+									type="button" value="글목록" class="btn"
+									onclick="location.href='fnotice.jsp'">
 							</div>
 						</td>
 					</tr>
-				</table>
+					</table>
 			</form>
+			
 		</article>
-		<div class="clear"></div>
+		<!-- 본문들어가는 곳 -->
 		<!-- 푸터들어가는 곳 -->
 		<jsp:include page="../inc/bottom.jsp"></jsp:include>
 		<!-- 푸터들어가는 곳 -->

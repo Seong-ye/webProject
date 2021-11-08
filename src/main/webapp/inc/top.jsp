@@ -14,7 +14,7 @@
 	<div id="top_menu">
 			<a href="../company/welcome.jsp">About us</a>
 			<a href="../main/shopping.jsp">Shop</a>
-			<a href="../center/notice.jsp">Commuity</a>
+			<a href="../fcenter/fnotice.jsp">Commuity</a>
 	</div>
 	
 	<%
@@ -27,7 +27,7 @@
 		<a href="../center/notice.jsp">Notice</a>
 		<a href="../member/login.jsp">login</a>
 		<a href="">Order</a>
-		<a href="">My Accout</a>
+		<a href="../member/memberInfo.jsp">My Accout</a>
 		<a href="">Cart</a>
 	</div>
 
@@ -40,7 +40,7 @@
 		<a href="../center/notice.jsp">Notice</a>
 		<a href="../member/logout.jsp">logout</a>
 		<a href="">Order</a>
-		<a href="">My Accout</a>
+		<a href="../member/memberInfo.jsp">My Accout</a>
 		<a href="">Cart</a>
 	</div>
 	<%

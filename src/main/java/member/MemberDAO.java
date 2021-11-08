@@ -183,6 +183,7 @@ public class MemberDAO {
 		}
 	}//updateMember()
 	
+	
 	public int joinIdCheck(String id) {
 		
 		int result = -1;
@@ -208,6 +209,37 @@ public class MemberDAO {
 		}finally {
 			obclose();
 		}
+		return result;
+	}
+	
+public boolean deleteMember(String id, String pass) {
+		
+		boolean result = false;
+		String dbpw = "";
+		try {
+			con=getConnection();
+			sql = "select pass from member where id=?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				dbpw = rs.getString("pass");
+				if(dbpw.equals(pass)) {
+					String delsql = "delete from member where id=?";
+					pstmt = con.prepareStatement(delsql);
+					pstmt.setString(1, id);
+					pstmt.executeUpdate();
+					result = true;
+				}
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			obclose();
+		}
+		
 		return result;
 	}
 	

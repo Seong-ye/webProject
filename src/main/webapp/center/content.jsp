@@ -46,6 +46,7 @@
 						<td>조회수</td>
 						<td><%=boardDTO.getReadcount() %></td>
 					</tr>
+					
 					<tr>
 						<td>글제목</td>
 						<td colspan="3"><%=boardDTO.getSubject()%></td>
@@ -54,18 +55,30 @@
 						<td>글내용</td>
 						<td colspan="3"><%=boardDTO.getContent() %></td>
 					</tr>
-				</table>
-			</table>
+				
+			<tr><td colspan="5">
 			<div id="table_search">
-				<input type="button" value="글수정" class="btn"
+			<%
+			String id= (String)session.getAttribute("id");
+			//세션값이 있으면
+			//글쓴이와 로그인(세션값) 사람이 일치하면 글수정, 글삭제 버튼 보이기
+			if(id!=null){
+				//로그인, 글쓴이 비교 일치
+				if(id.equals(boardDTO.getName())){
+					%>
+					<input type="button" value="글수정" class="btn"
 					onClick="location.href='updateForm.jsp?num=<%=boardDTO.getNum()%>'">
 				<input type="button" value="글삭제" class="btn"
 				onClick="location.href='deleteForm.jsp?num=<%=boardDTO.getNum()%>'">
+					<%
+				}
+			}
+			%>
 				<input type="button" value="글목록" class="btn"
 				onClick="location.href='notice.jsp'">
 			</div>
-			<div class="clear"></div>
-			<div id="page_control"></div>
+			</td></tr>
+			</table>
 		</article>
 		<!-- 게시판 -->
 		<!-- 본문들어가는 곳 -->

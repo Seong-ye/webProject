@@ -6,7 +6,7 @@ nav#sub_menu{
 	font-family: Verdana, Geneva, sans-serif;
 	font-size: 1em;
 	position:fixed;
-	top: 190px;
+	top: 130px;
 	left : 5px;
 }
 div#sub_menu2{
@@ -25,7 +25,7 @@ select#select{
 	
 }
 div#detailPage{
-	margin:80px 0;
+	margin:100px 0;
 	text-align: center;
 }
 div#detailPage div.label{
@@ -34,15 +34,11 @@ div#detailPage div.label{
 	width:500px;
 	height:100px;
 	position:relative;
-	left : 545px;
-	top: 30px;
-	
+	left : 450px;
 }
 div#detailPage label.label1{
 	font-family: 'Zen Antique', serif;
 	font-size: 5em;
-	
-
 }
 div#detailPage label.label2{
 	font-family: 'Zen Antique', serif;
@@ -107,11 +103,18 @@ figcaption {
 	clear: both;
 }
 
-article table#notice, article table#notice1, article table#upForm, article table#delForm, article table#writeForm  {
-	width: 1120px;
+article table#notice, article table#notice1, article table#upForm
+, article table#delForm, article table#writeForm, article table#memberInfo  {
+	width: 970px;
 	border-collapse: collapse;
+	position: relative;
+	top : 90px;
+
 }
-article table#notice1 tr, article table#upForm tr, article table#delForm, article table#writeForm tr{
+
+
+article table#notice1 tr, article table#upForm tr, article table#delForm tr
+, article table#writeForm tr, article table#memberInfo tr{
 	text-align: center;
 	border-bottom : 0.5px solid black;
 	font-family: 'Zen Antique', serif;
@@ -195,10 +198,7 @@ article th.tread {
 }
 /*너비 50px 
 오른쪽위 둥글게5px 오른쪽아래 둥글게5px*/
-article #table_search {
-	margin: 15px 0 10px 0;
-	float: right;
-}
+
 /*밖여백 15px 0 10px 0 정렬 right*/
 #table_search .input_box {
 	height: 20px;
@@ -208,7 +208,8 @@ article #table_search {
 }
 /*높이 20px 너비 200px
 테두리 1px solid #333 테두리둥글게 10px 배경색#FEFDED*/
-#table_search .btn, table#upForm .btn, table#delForm .btn, table#writeForm .btn{
+#table_search .btn, table#upForm .btn, table#delForm .btn
+, table#writeForm .btn, table#memberInfo .btn{
 	width: 120px;
 	height: 23px;
 	border: none;
@@ -222,11 +223,6 @@ article #table_search {
 	cursor: pointer;
 }
 
-table#delForm .btn{
-	position:absolute;
-	left:460px;
-	top:230px;
-}
 /*안여백 2px 밖여백 0 0 0 5px
 너비 90 높이 23 테두리 1 solid #999 테두리둥글게 10px
 글자색 #FFF 
@@ -257,24 +253,14 @@ article table#notice tr:hover {
 	cursor: pointer;
 	cursor: hand;
 }
-/*배경색 #EEFDFF
-커서 pointer 커서 hand*/
-/*------------------*/
-#sub_img_member {
-	width: 971px;
-	height: 179px;
-	background-image: url("../images/member/sub_back.png");
-	background-repeat: no-repeat;
-	background-position: left top;
-}
 
 form#join {
 	margin: 0 80px;
-	width: 400px;
-	height : 900px;
+	width: 450px;
+	height : 650px;
 	position : relative;
 	top : 140px;
-	left : 500px;
+	left : 400px;
 }
 /*밖여백 10px 0 0 0 너비670px*/
 form#join fieldset {
@@ -329,10 +315,10 @@ form#join input.addressBtn{
 글자굵기bold 글자색 #FFF 
 배경이미지 images/member/dup.jpg
 repeat-x center center*/
-form#join .submit{
-	margin-top : 10px;
+form#join .submit, form#join .cancel{
+	margin: 10px 10px;
 	height: 25px;
-	width: 405px;
+	width: 200px;
 	border: none;
 	font-size: 14px;
 	color: #FFF;
@@ -343,16 +329,17 @@ form#join .submit{
 	cursor: pointer;
 }
 #buttons{
-	width:405px;
+	width:400px;
+	height : 50px;
 	display : flex;
 	flex-direction: row;
-	justify-content: space-between; 
+	justify-content: space-between;
 }
 
 #buttons .submit1, #buttons .join{
 	margin-top : 10px;
 	height: 25px;
-	width: 197px;
+	width: 180px;
 	border: none;
 	font-size: 14px;
 	color: #FFF;
@@ -399,12 +386,13 @@ label#useLabel, label#idLabel{
 	font-family: 'Zen Antique', serif;
 }
 article#shopArticle{
-	width: 1263px;
-	height : 3500px; 
+	padding-top:30px;
+	width: 100%;
+	height :100%; 
 }
 
 table#shopping img{
-	width : 345px;
-	height : 470px;
-	margin : 95px;
+	width : 270px;
+	height : 380px;
+	margin : 70px;
 }

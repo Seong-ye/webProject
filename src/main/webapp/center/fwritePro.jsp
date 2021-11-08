@@ -66,7 +66,7 @@
 	boardDAO.insertBoard(boardDTO);
 
 	// 글목록 이동
-	response.sendRedirect("../center/notice.jsp");
+	response.sendRedirect("notice.jsp");
 	%>
 </body>
 </html>
